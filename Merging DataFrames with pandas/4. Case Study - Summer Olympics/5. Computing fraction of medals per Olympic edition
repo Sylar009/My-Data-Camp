@@ -1,0 +1,53 @@
+In this exercise, you'll start with the DataFrames editions, medals, & medal_counts from prior exercises.
+
+You can extract a Series with the total number of medals awarded in each Olympic edition.
+
+The DataFrame medal_counts can be divided row-wise by the total number of medals awarded each edition; the method .divide() performs 
+the broadcast as you require.
+
+This gives you a normalized indication of each country's performance in each edition.
+
+Instructions
+
+Set the index of the DataFrame editions to be 'Edition' (using the method .set_index()). Save the result as totals.
+Extract the 'Grand Total' column from totals and assign the result back to totals.
+Divide the DataFrame medal_counts by totals along each row. You will have to use the .divide() method with the option axis='rows'. 
+Assign the result to fractions.
+Print first & last 5 rows of the DataFrame fractions. This has been done for you, so hit 'Submit Answer' to see the results!
+
+Answer:============================================================================================================================
+
+# Set Index of editions: totals
+totals = editions.set_index('Edition')
+
+# Reassign totals['Grand Total']: totals
+totals = totals['Grand Total']
+
+# Divide medal_counts by totals: fractions
+fractions = medal_counts.divide(totals, axis=0)
+
+# Print first & last 5 rows of fractions
+print(fractions.head())
+print(fractions.tail())
+ 
+Output:============================================================================================================================
+
+NOC      AFG  AHO  ALG       ANZ  ARG  ...  VIE  YUG  ZAM  ZIM       ZZX
+Edition                                ...                              
+1896     NaN  NaN  NaN       NaN  NaN  ...  NaN  NaN  NaN  NaN  0.039735
+1900     NaN  NaN  NaN       NaN  NaN  ...  NaN  NaN  NaN  NaN  0.066406
+1904     NaN  NaN  NaN       NaN  NaN  ...  NaN  NaN  NaN  NaN  0.017021
+1908     NaN  NaN  NaN  0.023632  NaN  ...  NaN  NaN  NaN  NaN       NaN
+1912     NaN  NaN  NaN  0.011299  NaN  ...  NaN  NaN  NaN  NaN       NaN
+
+[5 rows x 138 columns]
+NOC          AFG  AHO       ALG  ANZ       ARG  ...       VIE       YUG       ZAM       ZIM  ZZX
+Edition                                         ...                                             
+1992         NaN  NaN  0.001173  NaN  0.001173  ...       NaN       NaN       NaN       NaN  NaN
+1996         NaN  NaN  0.001614  NaN  0.010758  ...       NaN  0.013986  0.000538       NaN  NaN
+2000         NaN  NaN  0.002481  NaN  0.009926  ...  0.000496  0.012903       NaN       NaN  NaN
+2004         NaN  NaN       NaN  NaN  0.023524  ...       NaN       NaN       NaN  0.001502  NaN
+2008     0.00049  NaN  0.000979  NaN  0.024976  ...  0.000490       NaN       NaN  0.001959  NaN
+
+[5 rows x 138 columns]
+
