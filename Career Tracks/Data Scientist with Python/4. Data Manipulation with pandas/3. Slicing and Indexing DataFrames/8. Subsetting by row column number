@@ -1,0 +1,84 @@
+Subsetting by row/column number
+The most common ways to subset rows are the ways we've previously discussed: using a Boolean condition or by index labels. However, it is also occasionally useful to pass row numbers.
+
+This is done using .iloc[], and like .loc[], it can take two arguments to let you subset by rows and columns.
+
+pandas is loaded as pd. temperatures (without an index) is available.
+
+Instructions
+100 XP
+Use .iloc[] on temperatures to take subsets.
+
+Get the 23rd row, 2nd column (index positions 22 and 1).
+Get the first 5 rows (index positions 0 to 5).
+Get all rows, columns 3 and 4 (index positions 2 to 4).
+Get the first 5 rows, columns 3 and 4.
+
+
+Answer:============================================================================================================================
+
+# Get 23rd row, 2nd column (index 22, 1)
+print(temperatures.iloc[:22,:2])
+
+# Use slicing to get the first 5 rows
+print(temperatures.iloc[0:5])
+
+# Use slicing to get columns 3 to 4
+print(temperatures.iloc[:, 2:4])
+
+# Use slicing in both directions at once
+print(temperatures.iloc[:5, 2:4])
+ 
+Output:============================================================================================================================
+
+         date     city
+0  2000-01-01  Abidjan
+1  2000-02-01  Abidjan
+2  2000-03-01  Abidjan
+3  2000-04-01  Abidjan
+4  2000-05-01  Abidjan
+5  2000-06-01  Abidjan
+6  2000-07-01  Abidjan
+7  2000-08-01  Abidjan
+8  2000-09-01  Abidjan
+9  2000-10-01  Abidjan
+10 2000-11-01  Abidjan
+11 2000-12-01  Abidjan
+12 2001-01-01  Abidjan
+13 2001-02-01  Abidjan
+14 2001-03-01  Abidjan
+15 2001-04-01  Abidjan
+16 2001-05-01  Abidjan
+17 2001-06-01  Abidjan
+18 2001-07-01  Abidjan
+19 2001-08-01  Abidjan
+20 2001-09-01  Abidjan
+21 2001-10-01  Abidjan
+        date     city        country  avg_temp_c
+0 2000-01-01  Abidjan  Côte D'Ivoire      27.293
+1 2000-02-01  Abidjan  Côte D'Ivoire      27.685
+2 2000-03-01  Abidjan  Côte D'Ivoire      29.061
+3 2000-04-01  Abidjan  Côte D'Ivoire      28.162
+4 2000-05-01  Abidjan  Côte D'Ivoire      27.547
+             country  avg_temp_c
+0      Côte D'Ivoire      27.293
+1      Côte D'Ivoire      27.685
+2      Côte D'Ivoire      29.061
+3      Côte D'Ivoire      28.162
+4      Côte D'Ivoire      27.547
+...              ...         ...
+16495          China      18.979
+16496          China      23.522
+16497          China      25.251
+16498          China      24.528
+16499          China         NaN
+
+[16500 rows x 2 columns]
+         country  avg_temp_c
+0  Côte D'Ivoire      27.293
+1  Côte D'Ivoire      27.685
+2  Côte D'Ivoire      29.061
+3  Côte D'Ivoire      28.162
+4  Côte D'Ivoire      27.547
+
+
