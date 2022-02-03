@@ -1,0 +1,44 @@
+Subsetting pivot tables
+A pivot table is just a DataFrame with sorted indexes, so the techniques you have learned already can be used to subset them. In particular, the .loc[] + slicing combination is often helpful.
+
+pandas is loaded as pd. temp_by_country_city_vs_year is available.
+
+Instructions
+100 XP
+Instructions
+100 XP
+Use .loc[] on temp_by_country_city_vs_year to take subsets.
+
+From Egypt to India.
+From Egypt, Cairo to India, Delhi.
+From Egypt, Cairo to India, Delhi, and 2005 to 2010.
+
+
+Answer:============================================================================================================================
+
+# Subset for Egypt to India
+temp_by_country_city_vs_year.loc["Egypt":"India"]
+
+# Subset for Egypt, Cairo to India, Delhi
+temp_by_country_city_vs_year.loc[('Egypt','Cairo'):('India','Delhi')]
+
+# Subset in both directions at once
+temp_by_country_city_vs_year.loc[('Egypt','Cairo'):('India','Delhi'),'2005':'2010']
+ 
+Output:============================================================================================================================
+
+year                    2005    2006    2007    2008    2009    2010
+country  city                                                       
+Egypt    Cairo        22.006  22.050  22.361  22.644  22.625  23.718
+         Gizeh        22.006  22.050  22.361  22.644  22.625  23.718
+Ethiopia Addis Abeba  18.313  18.427  18.143  18.165  18.765  18.298
+France   Paris        11.553  11.788  11.751  11.278  11.464  10.410
+Germany  Berlin        9.919  10.545  10.883  10.658  10.062   8.607
+India    Ahmadabad    26.828  27.283  27.511  27.049  28.096  28.018
+         Bangalore    25.477  25.418  25.464  25.353  25.726  25.705
+         Bombay       27.036  27.382  27.635  27.178  27.845  27.765
+         Calcutta     26.729  26.986  26.585  26.522  27.153  27.289
+         Delhi        25.716  26.366  26.146  25.675  26.554  26.520
+         
+         
+         
