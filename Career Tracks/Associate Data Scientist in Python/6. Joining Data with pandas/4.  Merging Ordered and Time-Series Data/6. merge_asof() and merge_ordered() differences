@@ -1,0 +1,9 @@
+merge_asof() and merge_ordered() differences
+The merge_asof() and merge_ordered() functions are similar in the type of merge they perform and the input arguments they use. In this exercise, think about
+how the functions are different.
+
+Instructions
+100XP
+Drag and drop the statement into the appropriate box for either the merge_asof() function, the merge_ordered() function, or both if it applies to both 
+functions.
+

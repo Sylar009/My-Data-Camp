@@ -1,0 +1,90 @@
+Concatenation basics
+You have been given a few tables of data with musical track info for different albums from the metal band, Metallica. The track info comes from their Ride
+The Lightning, Master Of Puppets, and St. Anger albums. Try various features of the .concat() method by concatenating the tables vertically together 
+in different ways.
+
+The tables tracks_master, tracks_ride, and tracks_st have loaded for you.
+
+Instructions 1/3
+30 XP
+Instructions 1/3
+30 XP
+Concatenate tracks_master, tracks_ride, and tracks_st, in that order, setting sort to True.
+Concatenate tracks_master, tracks_ride, and tracks_st, where the index goes from 0 to n-1.
+Concatenate tracks_master, tracks_ride, and tracks_st, showing only columns that are in all tables.
+
+Answer:============================================================================================================================
+# Concatenate the tracks
+tracks_from_albums = pd.concat([tracks_master, tracks_ride, tracks_st],
+                               sort=True)
+print(tracks_from_albums)
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+# Concatenate the tracks so the index goes from 0 to n-1
+tracks_from_albums = pd.concat([tracks_master, tracks_ride, tracks_st],
+                               ignore_index=True,
+                               sort=True)
+print(tracks_from_albums)
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+# Concatenate the tracks, show only columns names that are in all tables
+tracks_from_albums = pd.concat([tracks_master, tracks_ride, tracks_st],
+                               join='inner',
+                               sort=True)
+print(tracks_from_albums)
+
+ 
+Output:============================================================================================================================
+
+   aid             composer  gid  mtid                     name   tid  u_price
+0  152  J.Hetfield/L.Ulrich    3     1                  Battery  1853     0.99
+1  152            K.Hammett    3     1        Master Of Puppets  1854     0.99
+4  152  J.Hetfield/L.Ulrich    3     1        Disposable Heroes  1857     0.99
+0  154                  NaN    3     1     Fight Fire With Fire  1874     0.99
+1  154                  NaN    3     1       Ride The Lightning  1875     0.99
+2  154                  NaN    3     1  For Whom The Bell Tolls  1876     0.99
+3  154                  NaN    3     1            Fade To Black  1877     0.99
+4  154                  NaN    3     1        Trapped Under Ice  1878     0.99
+0  155                  NaN    3     1                  Frantic  1882     0.99
+1  155                  NaN    3     1                St. Anger  1883     0.99
+2  155                  NaN    3     1     Some Kind Of Monster  1884     0.99
+3  155                  NaN    3     1             Dirty Window  1885     0.99
+4  155                  NaN    3     1            Invisible Kid  1886     0.99
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    aid             composer  gid  mtid                     name   tid  u_price
+0   152  J.Hetfield/L.Ulrich    3     1                  Battery  1853     0.99
+1   152            K.Hammett    3     1        Master Of Puppets  1854     0.99
+2   152  J.Hetfield/L.Ulrich    3     1        Disposable Heroes  1857     0.99
+3   154                  NaN    3     1     Fight Fire With Fire  1874     0.99
+4   154                  NaN    3     1       Ride The Lightning  1875     0.99
+5   154                  NaN    3     1  For Whom The Bell Tolls  1876     0.99
+6   154                  NaN    3     1            Fade To Black  1877     0.99
+7   154                  NaN    3     1        Trapped Under Ice  1878     0.99
+8   155                  NaN    3     1                  Frantic  1882     0.99
+9   155                  NaN    3     1                St. Anger  1883     0.99
+10  155                  NaN    3     1     Some Kind Of Monster  1884     0.99
+11  155                  NaN    3     1             Dirty Window  1885     0.99
+12  155                  NaN    3     1            Invisible Kid  1886     0.99
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+  aid  gid  mtid                     name   tid  u_price
+0  152    3     1                  Battery  1853     0.99
+1  152    3     1        Master Of Puppets  1854     0.99
+4  152    3     1        Disposable Heroes  1857     0.99
+0  154    3     1     Fight Fire With Fire  1874     0.99
+1  154    3     1       Ride The Lightning  1875     0.99
+2  154    3     1  For Whom The Bell Tolls  1876     0.99
+3  154    3     1            Fade To Black  1877     0.99
+4  154    3     1        Trapped Under Ice  1878     0.99
+0  155    3     1                  Frantic  1882     0.99
+1  155    3     1                St. Anger  1883     0.99
+2  155    3     1     Some Kind Of Monster  1884     0.99
+3  155    3     1             Dirty Window  1885     0.99
+4  155    3     1            Invisible Kid  1886     0.99
+
+
